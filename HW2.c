@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include <conio.h>
 
 int main(void)
 {
@@ -31,6 +32,19 @@ int main(void)
 				printf("密碼錯誤達三次，程式即將結束");
 			}
 		}
+	}
+	//畫出主選單
+	char choice;
+	while(1)
+	{
+		printf("~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+		printf("|a.畫出直角三角形        |\n");
+		printf("|b.顯示乘法表            |\n");
+		printf("|c.結束                  |\n");
+		printf("~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+		printf("請輸入選項:");
+		fflush(stdin);
+		scanf("%c",&choice);
 	}
 	
 	
