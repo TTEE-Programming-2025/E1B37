@@ -4,8 +4,10 @@
 
 int main(void)
 {
-	int password,i,attempts=0;
-	for(i=0;i<=20;i++)
+	int password,is,attempts=0,i,j,k;
+	int seats[9][9];
+	int wrong=0;
+	for(is=0;is<=20;is++)
 	printf("*****----*****----*****----*****----*****----*****----*****----*****----*****----*****----*****----*****----*****\n");
 	
 	while(attempts<3)
@@ -32,25 +34,39 @@ int main(void)
 			}
 		}
 	}
-	
-	char choice,c,l;
-	int j,k;
-	while (1) 
-	{
-        system("CLS"); // 清除畫面
-        printf("=====================\n");
-        printf("| a.Available seats   |\n");
-        printf("| b.Arrange for you   |\n");
-        printf("| c.Choose by youself |\n");
-        printf("| c.Exit              |\n");
-        printf("=====================\n");
-        printf("請輸入選項(a/b/c/d)：");
+	for (i = 0; i < 9; i++)
+        for (j = 0; j < 9; j++)
+            seats[i][j] = 0;
 
-        choice = getch();
-        printf("%c\n", choice);
+    char choice;
+    while (1) {
+        printf("\n---------[Booking System]---------\n");
+        printf("a. Available seats\n");
+        printf("b. Arrange for you\n");
+        printf("c. Choose by yourself\n");
+        printf("d. Exit\n");
+        printf("----------------------------------\n");
+        printf("請選擇：");
+        scanf(" %c", &choice);
+
+        // 顯示座位圖
+        if (choice == 'a') {
+            printf(" 123456789\n");
+            for (i = 8; i >= 0; i--) {
+                printf("%d", i + 1);
+                for (j = 0; j < 9; j++) {
+                    if (seats[i][j] == 0) printf("-");
+                    else if (seats[i][j] == 1) printf("*");
+                    else if (seats[i][j] == 2) printf("@");
+                }
+                printf("\n");
+            }
+        }
 
         
     }
+	
+	
 	
 	
 	
