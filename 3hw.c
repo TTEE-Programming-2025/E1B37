@@ -32,6 +32,36 @@ int main(void)
 			}
 		}
 	}
+	
+	char choice,c,l;
+	int j,k;
+	while (1) 
+	{
+        system("CLS"); // 清除畫面
+        printf("=====================\n");
+        printf("| a.Available seats   |\n");
+        printf("| b.Arrange for you   |\n");
+        printf("| c.Choose by youself |\n");
+        printf("| c.Exit              |\n");
+        printf("=====================\n");
+        printf("請輸入選項(a/b/c/d)：");
+
+        choice = getch();
+        printf("%c\n", choice);
+
+        
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	system("pause");
 	return 0;
 }
