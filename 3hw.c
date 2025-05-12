@@ -118,22 +118,49 @@ int main(void)
                 }
             }
         }
+        else if (choice == 'c') {
+            int col, row;
+            printf("請輸入座位（列-行，例如 3-5）：");
+            scanf("%d-%d", &col, &row);
+            if (col < 1 || col > 9 || row < 1 || row > 9) {
+                printf("超出範圍。\n");
+                continue;
+            }
+            if (seats[row - 1][col - 1] != 0) {
+                printf("此座位已被預訂。\n");
+                continue;
+            }
+            seats[row - 1][col - 1] = 1;
 
-        
+            printf(" 123456789\n");
+            for (i = 8; i >= 0; i--) {
+                printf("%d", i + 1);
+                for (j = 0; j < 9; j++) {
+                    if (seats[i][j] == 0) printf("-");
+                    else if (seats[i][j] == 1) printf("*");
+                    else if (seats[i][j] == 2) printf("@");
+                }
+                printf("\n");
+            }
+        }
+
+        // 離開或繼續
+        else if (choice == 'd') {
+            char again;
+            printf("Continue? (y/n)：");
+            scanf(" %c", &again);
+            if (again == 'y') continue;
+            else {
+                printf("感謝使用，再見！\n");
+                break;
+            }
+        }
+
+        else {
+            printf("無效選項。\n");
+        }
     }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	system("pause");
 	return 0;
 }
