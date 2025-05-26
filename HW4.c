@@ -4,6 +4,12 @@
 
 int main(void)
 {
+	void enterGrades();
+	void displayGrades();
+	void searchStudent();
+	void gradeRanking();
+	
+	
 	int password,i,attempts=0;
 	for(i=0;i<=20;i++)
 	printf("*****----*****----*****----*****----*****----*****----*****----*****----*****----*****----*****----*****----*****\n");
@@ -32,4 +38,23 @@ int main(void)
 			}
 		}
 	}
-} 
+	char choice;
+	while(1)
+	{
+        system("cls");
+        printf("-----------[Grade System]------------\n");
+        printf("a. Enter student grades\n");
+        printf("b. Display student grades\n");
+        printf("c. Search for student grades\n");
+        printf("d. Grade ranking\n");
+        printf("e. Exit system\n");
+        printf("-------------------------------------\n");
+        printf("Enter your choice: ");
+        scanf(" %c", &choice);
+	}
+	system("pause");
+	return 0;
+}
+
+
+
